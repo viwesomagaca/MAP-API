@@ -10,7 +10,9 @@ $(document).ready(function() {
     };
 
     var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+}
 
+function myMarker(){
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(51.508742, -0.120850),
       draggable: true,
@@ -41,8 +43,7 @@ $("#search").click(function() {
       center: new google.maps.LatLng(51.508742, -0.120850),
       zoom: 1,
       mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
+    }
     var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
 
     data.forEach(function(result){
@@ -62,4 +63,12 @@ $("#search").click(function() {
 
   })
 });
+
+function findACity(){
+$("#filterCity").onclick(function() {
+var searchCity = document.getEmentById("findCity").value;
+console.log(searchCity);
+
+});
+};
 });

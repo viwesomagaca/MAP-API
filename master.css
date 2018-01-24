@@ -5,7 +5,15 @@
     font-size: 78px;
   }
 
-  #googleapis{
-    margin-left: -5em;
+  .myMap{
+    margin-left: 10em;
 
   }
+  .inputBox{
+    width: 60%;
+    height: : 4em;
+  }
+
+.container2{
+  background-color: lavender;
+}

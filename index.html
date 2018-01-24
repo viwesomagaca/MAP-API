@@ -1,48 +1,33 @@
-<html>
+<!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="master.css">
 <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>ı
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-  <div class="jumbotron">
+
     <h1> My first basic map project </h1>
+<div class="container2">
+    <div class="control">
+   <input id="findCity" type="text" placeholder="Search Here">
 
-</div>
+  <input type="button" id="search" class="button is-primary" value="search">
+  <input type="button" id="filterCity" class="button is-primary" value="Filter">
 
-  <input type="button" id="search" class="btn btn-primary btn-lg" value="search"></input>
+
+  </div>
     <br>
     <br>
     <br>
-
+<div class="myMap">
 <div id="googleMap1" style="width:800px;height:400px;"></div>
-
-<script>
-// function myMap() {
-//   var mapOptions1 = {
-//     center: new google.maps.LatLng(51.508742,-0.120850),
-//     zoom:9,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-//   };
-//
-//   var map1 = new google.maps.Map(document.getElementById("googleMap1"),mapOptions1);
-//
-//   var marker = new google.maps.Marker({
-//          map: map1
-//        });
-// }
-</script>
-
+</div>
+</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 </body>
 <script src="main.js"></script>
 </html>
