@@ -28,7 +28,6 @@ $(document).ready(function() {
     return map1;
   }
 
-
   function myMarker(Latitude, Longitude, map1) {
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(Latitude, Longitude),
@@ -38,7 +37,6 @@ $(document).ready(function() {
     });
     marker.addListener('click', toggleBounce);
   }
-
 
 
   function toggleBounce() {
