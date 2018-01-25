@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     cityData = data;
     console.log(cityData);
-    var map1 = myMap(51.508742, -0.120850)
+    var map1 = myMap(51.508742, -0.120850,1)
     data.forEach(function(result) {
 
       myMarker(result.Latitude, result.Longitude, map1);
@@ -17,11 +17,11 @@ $(document).ready(function() {
 
   })
 
-  function myMap(Latitude, Longitude) {
+  function myMap(Latitude, Longitude,zoom) {
 
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
-      zoom: 1,
+      zoom: zoom,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
@@ -54,14 +54,15 @@ $(document).ready(function() {
     var searchCity = $("#findCity").val();
 
 
-    var myCity = cityData.find(function(item) {
+    var myCity = cityData.filter(function(item) {
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim();
     })
-    var map1 = myMap(51.508742, -0.120850);
-    myMap(myCity.Latitude, myCity.Longitude);
-    myMarker(myCity.Latitude, myCity.Longitude);
+
+    var map1 = myMap(myCity.Latitude, myCity.Longitude,18);
+    myCity.forEach(function(foundCity){
+    myMarker(foundCity.Latitude, foundCity.Longitude,map1);
     console.log(myCity);
+
   });
-
-
-})
+});
+});

@@ -1,1 +1,13 @@
-  
+
+  input{
+    height: 4em;
+  }
+
+  #findCity{
+    height: 4em;
+    width: 20em;
+  }
+
+  .container{
+    margin-left: 10em;
+  }
