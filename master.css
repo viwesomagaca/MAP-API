@@ -8,6 +8,14 @@
     width: 20em;
   }
 
+  #search{
+    width: 10em;
+  }
+
   .container{
     margin-left: 10em;
+    margin-top: 3em;
   }
+body{
+
+}

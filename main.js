@@ -1,21 +1,35 @@
 $(document).ready(function() {
+var availableSchools = document.getElementById('projects').innerHTML;
+var template = Handlebars.compile(availableSchools);
+
+
   var search_array = [];
   var cityData;
   $.ajax({
     url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
     type: "GET"
   }).then(function(data) {
-
     cityData = data;
     console.log(cityData);
     var map1 = myMap(51.508742, -0.120850,1)
+
     data.forEach(function(result) {
-
       myMarker(result.Latitude, result.Longitude, map1);
+    });
+       if(cityData) {
+         for (var i = 0; i < cityData.length; i++) {
+           var results = cityData[i].ProjectName;
+         console.log(cityData[i].ProjectName);
 
-    })
+         var searched = template({
+           school: results
+           });
+document.getElementById("projectSchools").innerHTML = searched;
+  console.log(searched);
+}
 
-  })
+     }
+   });
 
   function myMap(Latitude, Longitude,zoom) {
 
@@ -56,11 +70,19 @@ $(document).ready(function() {
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim();
     })
 
-    var map1 = myMap(myCity.Latitude, myCity.Longitude,18);
-    myCity.forEach(function(foundCity){
-    myMarker(foundCity.Latitude, foundCity.Longitude,map1);
-    console.log(myCity);
+    for(var i = 0; i< myCity.length; i++){
+      var foundCity = myCity[i];
+      if(foundCity){
+        var map1 = myMap(foundCity.Latitude, foundCity.Longitude,18);
+        myMarker(foundCity.Latitude, foundCity.Longitude,map1);
+      } else if(!foundCity){
+        alert("City not found!");
+      }
+            console.log(foundCity);
+    }
+
+
+
 
   });
-});
 });

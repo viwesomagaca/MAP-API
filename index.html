@@ -1,33 +1,55 @@
 <!DOCTYPE html>
+
 <head>
-<link rel="stylesheet" href="master.css">
-<meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="master.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="handlebars-v4.0.5.js"></script>
 </head>
+
 <body>
 
 
-    <h1> My first basic map project </h1>
-<div class="container">
-    <div class="control">
-      <p>
-   <input id="findCity" class="form-control" type="text" placeholder="Search Here">
 
-  <input type="button" id="search" class="btn btn-primary" value="search">
-</p>
+  <div class="container" align="center">
+    <div class="control">
+      <h1> School Projects Finder
+        <br>
+          <br>
+      <p>
+        <input id="findCity" class="form-control" type="text" placeholder="Search Here"> <br>
+        <input type="button" id="search" class="btn btn-primary" value="search" align="center">
+      </p>
+
+    </div>
+    <br>
+    <br>
+    <div class="myMap">
+      <div id="googleMap1" style="width:800px;height:400px;"></div>
+    </div>
+    <ul class="list-group">
+
+
+ <script id="projects" type="text/x-handlebars-template">
+      {{#each schoolsl}}
+          <li>{{this}}</li>
+      {{/each}}
+
+</script>
+<div >
+  <ul class="projectSchools">
+<li>{{Address}}</li>
+</div>
+</ul>
+
 
   </div>
-    <br>
-    <br>
-    <br>
-<div class="myMap">
-<div id="googleMap1" style="width:800px;height:400px;"></div>
-</div>
-</div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
 </body>
 <script src="main.js"></script>
+
 </html>
