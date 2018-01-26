@@ -28,26 +28,31 @@
     </div>
     <br>
     <br>
-    <div class="myMap">
-      <div id="googleMap1" style="width:800px;height:400px;"></div>
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div class="list-schools">
+          <script id="projects" type="text/x-handlebars-template">
+            <ul class="projectSchools">
+              <div class="list-group">
+
+              {{#each school}}
+                  <a href="#" class="list-group-item list-group-item-action">{{this.Address}}</a>
+              {{/each}}
+              </div>
+          </ul>
+         </script>
+          </div>
+
+      </div>
+      <div class="col-sm-8">
+        <div class="myMap">
+          <div id="googleMap1" style="width:800px;height:400px;"></div>
+        </div>
+        </div
     </div>
-    <ul class="list-group">
 
 
- <script id="projects" type="text/x-handlebars-template">
-      {{#each schoolsl}}
-          <li>{{this}}</li>
-      {{/each}}
-
-</script>
-<div >
-  <ul class="projectSchools">
-<li>{{Address}}</li>
-</div>
-</ul>
-
-
-  </div>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
 </body>
 <script src="main.js"></script>

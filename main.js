@@ -9,6 +9,9 @@ var template = Handlebars.compile(availableSchools);
     url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
     type: "GET"
   }).then(function(data) {
+ document.querySelector(".list-schools").innerHTML = template({
+   school: data
+ });
     cityData = data;
     console.log(cityData);
     var map1 = myMap(51.508742, -0.120850,1)
@@ -16,20 +19,9 @@ var template = Handlebars.compile(availableSchools);
     data.forEach(function(result) {
       myMarker(result.Latitude, result.Longitude, map1);
     });
-       if(cityData) {
-         for (var i = 0; i < cityData.length; i++) {
-           var results = cityData[i].ProjectName;
-         console.log(cityData[i].ProjectName);
+     });
 
-         var searched = template({
-           school: results
-           });
-document.getElementById("projectSchools").innerHTML = searched;
-  console.log(searched);
-}
 
-     }
-   });
 
   function myMap(Latitude, Longitude,zoom) {
 
