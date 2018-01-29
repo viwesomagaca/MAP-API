@@ -1,7 +1,8 @@
 $(document).ready(function() {
 var availableSchools = document.getElementById('projects').innerHTML;
 var template = Handlebars.compile(availableSchools);
-
+var foundProject = document.getElementById('output').innerHTML;
+var template2 = Handlebars.compile(foundProject);
 
   var search_array = [];
   var cityData;
@@ -57,18 +58,20 @@ var template = Handlebars.compile(availableSchools);
 
     var searchCity = $("#findCity").val();
 
-
     var myCity = cityData.filter(function(item) {
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim();
     })
+    document.querySelector(".findMe").innerHTML = template2({
+      myCity: myCity
+    });
 
     for(var i = 0; i< myCity.length; i++){
       var foundCity = myCity[i];
       if(foundCity){
         var map1 = myMap(foundCity.Latitude, foundCity.Longitude,18);
         myMarker(foundCity.Latitude, foundCity.Longitude,map1);
-      } else if(!foundCity){
-        alert("City not found!");
+      } else if(foundCity.length < 0){
+        console.log("City not found!");
       }
             console.log(foundCity);
     }

@@ -2,10 +2,36 @@
   input{
     height: 4em;
   }
+h1{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 18px;
+  margin-left:2em;
+  color: orange;
+}
+ .myheader{
+   height: 10em;
+    background-color: #1F618D;
+    /* margin-left: 5em;
+    margin-right: 5em; */
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1F618D;
+    color: white;
+    text-align: center;
+}
 
   #findCity{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
     height: 4em;
     width: 20em;
+    align-items: center;
   }
 
   #search{
@@ -13,9 +39,35 @@
   }
 
   .container{
-    margin-left: 2em;
+    margin-left: 1em;
     margin-top: 3em;
+    align-items: center;
   }
 body{
 
 }
+.scrollbar-cyan::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px; }
+
+.scrollbar-cyan::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+.scrollbar-cyan::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #00bcd4; }
+
+  .bordered-cyan::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border: 1px solid #00bcd4; }
+
+.bordered-cyan::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: none; }
+
+  .example-1 {
+  position: relative;
+  overflow-y: scroll;
+  height: 400px; }
