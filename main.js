@@ -1,30 +1,27 @@
 $(document).ready(function() {
-var availableSchools = document.getElementById('projects').innerHTML;
-var template = Handlebars.compile(availableSchools);
-var foundProject = document.getElementById('output').innerHTML;
-var template2 = Handlebars.compile(foundProject);
-
-  var search_array = [];
   var cityData;
+  var availableSchools = document.getElementById('projects').innerHTML;
+  var template = Handlebars.compile(availableSchools);
+  var foundProject = document.getElementById('output').innerHTML;
+  var template2 = Handlebars.compile(foundProject);
+
+
   $.ajax({
     url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
     type: "GET"
   }).then(function(data) {
- document.querySelector(".list-schools").innerHTML = template({
-   school: data
- });
+    document.querySelector(".list-schools").innerHTML = template({
+      school: data
+    });
     cityData = data;
-    console.log(cityData);
-    var map1 = myMap(51.508742, -0.120850,1)
+    var map1 = myMap(51.508742, -0.120850,3)
 
     data.forEach(function(result) {
       myMarker(result.Latitude, result.Longitude, map1);
     });
-     });
+  });
 
-
-
-  function myMap(Latitude, Longitude,zoom) {
+  function myMap(Latitude, Longitude, zoom) {
 
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
@@ -38,13 +35,12 @@ var template2 = Handlebars.compile(foundProject);
   function myMarker(Latitude, Longitude, map1) {
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(Latitude, Longitude),
-      draggable: true,
+      draggable: false,
       animation: google.maps.Animation.DROP,
       map: map1
     });
     marker.addListener('click', toggleBounce);
   }
-
 
   function toggleBounce() {
     if (marker.getAnimation() !== null) {
@@ -55,9 +51,16 @@ var template2 = Handlebars.compile(foundProject);
   }
 
   $("#search").click(function() {
+    var searchCity = document.getElementById("findCity").value;
 
-    var searchCity = $("#findCity").val();
+    if (searchCity === "") {
+      document.getElementById('message').innerHTML = "Please enter your text below";
+    } else if (myCity === undefined) {
+      document.getElementById('message').innerHTML = "City is not found";
 
+    }else{
+      document.getElementById('message').innerHTML = "";
+    }
     var myCity = cityData.filter(function(item) {
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim();
     })
@@ -65,19 +68,11 @@ var template2 = Handlebars.compile(foundProject);
       myCity: myCity
     });
 
-    for(var i = 0; i< myCity.length; i++){
-      var foundCity = myCity[i];
-      if(foundCity){
-        var map1 = myMap(foundCity.Latitude, foundCity.Longitude,18);
-        myMarker(foundCity.Latitude, foundCity.Longitude,map1);
-      } else if(foundCity.length < 0){
-        console.log("City not found!");
-      }
-            console.log(foundCity);
-    }
+    var map1 = myMap(0, 0, 2);
 
-
-
-
+    myCity.forEach(function(city) {
+      myMarker(city.Latitude, city.Longitude, map1);
+    })
   });
+
 });

@@ -4,27 +4,23 @@
   <link rel="stylesheet" href="master.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Sedgwick+Ave" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="handlebars-v4.0.5.js"></script>
 </head>
-
 <body>
-
-
   <div class="myheader"><br> <br>
-
     <ul class="nav nav-pills float-right">
-
-      <input id="findCity" class="form-control" type="text" placeholder="Search Here"> &nbsp; &nbsp;
+      <input id="findCity" class="form-control" type="text" placeholder="Search Here" required> &nbsp; &nbsp;
       <input type="button" id="search" class="btn btn-primary" value="search" align="center"> &nbsp; &nbsp;
     </ul>
-
-    <h1>School Projects Finder</h1>
-
+    <h1 class="myHeading">School Projects Finder</h1>
+  </div>
+  <div class="message">
+    <p id="message"></p>
   </div>
   <br>
   <div class="container">
@@ -35,13 +31,13 @@
             <script id="projects" type="text/x-handlebars-template">
               <div class="list-group">
                 {{#each school}}
-                <a href="#" class="list-group-item list-group-item-action">{{this.ProjectName}}</a> {{/each}}
+                <a href="" id="scrollerlist" class="list-group-item list-group-item-action">{{this.ProjectName}}</a>
+                {{/each}}
               </div>
             </script>
           </div>
         </div>
       </div>
-
       <div class="col-sm-8">
         <div class="myMap">
           <div id="googleMap1" style="width:800px;height:400px;"></div>
@@ -49,7 +45,6 @@
       </div>
     </div>
   </div>
-
 <div class="container">
   <div class="findMe">
     <script id="output" type="text/x-handlebars-template">
@@ -75,9 +70,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
   </body>
   <div class="footer">
-<p>Footer</p>
+<p></p>
 </div>
-
 <script src="main.js"></script>
-
 </html>

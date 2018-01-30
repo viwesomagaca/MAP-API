@@ -2,17 +2,17 @@
   input{
     height: 4em;
   }
-h1{
+.myHeading{
   font-family: 'Gloria Hallelujah', cursive;
-  font-size: 18px;
   margin-left:2em;
   color: orange;
 }
  .myheader{
    height: 10em;
     background-color: #1F618D;
-    /* margin-left: 5em;
-    margin-right: 5em; */
+  }
+  .card-title{
+  font-family: 'Gloria Hallelujah', cursive;;
   }
 
   .footer {
