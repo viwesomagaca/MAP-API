@@ -1,27 +1,32 @@
-$(document).ready(function() {
-  var cityData;
-  var availableSchools = document.getElementById('projects').innerHTML;
+$(document).ready(function() {                                                  //Populate the document and tell it to be ready
+
+  var cityData;                                                                 //define the variable
+
+  var availableSchools = document.getElementById('projects').innerHTML;         //compile handlebars templates
   var template = Handlebars.compile(availableSchools);
   var foundProject = document.getElementById('output').innerHTML;
   var template2 = Handlebars.compile(foundProject);
 
 
-  $.ajax({
+
+  $.ajax({                                                                       //ajax call that retrieves data from the API
     url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
     type: "GET"
   }).then(function(data) {
-    document.querySelector(".list-schools").innerHTML = template({
+    document.querySelector(".list-schools").innerHTML = template({               //Populating handlebars template
       school: data
     });
     cityData = data;
-    var map1 = myMap(51.508742, -0.120850,3)
+    var map1 = myMap(51.508742, -0.120850,3)                                     //Renders the map when the page loads
 
-    data.forEach(function(result) {
-      myMarker(result.Latitude, result.Longitude, map1);
+    data.forEach(function(result) {                                             //loop through data from API and call marker function,
+      myMarker(result.Latitude, result.Longitude, map1);                        //pass the results and values from the marker function parameters in order to render them for the first time
     });
   });
 
+
   function myMap(Latitude, Longitude, zoom) {
+                                                                                //Renders the map on the browser
 
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
@@ -32,7 +37,8 @@ $(document).ready(function() {
     return map1;
   }
 
-  function myMarker(Latitude, Longitude, map1) {
+
+  function myMarker(Latitude, Longitude, map1) {                                //function that renders markers on the map
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(Latitude, Longitude),
       draggable: false,
@@ -42,7 +48,8 @@ $(document).ready(function() {
     marker.addListener('click', toggleBounce);
   }
 
-  function toggleBounce() {
+
+  function toggleBounce() {                                                     //Function that controls the markers to bounce and toggle as well as animation
     if (marker.getAnimation() !== null) {
       marker.setAnimation(null);
     } else {
@@ -50,27 +57,28 @@ $(document).ready(function() {
     }
   }
 
-  $("#search").click(function() {
+  $("#search").click(function() {                                               //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
 
-    if (searchCity === "") {
-      document.getElementById('message').innerHTML = "please fill the textbox.";
-    } else if (myCity === undefined) {
-      document.getElementById('message').innerHTML = "City is not found!";
+    if (searchCity === "") {                                                    //display an error message when the button is clicked while the text box is empty
+      document.getElementById('message').innerHTML = "Please enter your text below";
+
+    } else if (myCity === undefined) {                                          //Displays error message when the city is not found
+      document.getElementById('message').innerHTML = "City is not found";
 
     }else{
-      document.getElementById('message').innerHTML = "";
+      document.getElementById('message').innerHTML = "";                        //It clears the text box after the undefined city is written
     }
-    var myCity = cityData.filter(function(item) {
-      return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim();
+    var myCity = cityData.filter(function(item) {                               //Filters the according to cities available on the data
+      return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
     })
-    document.querySelector(".findMe").innerHTML = template2({
+    document.querySelector(".findMe").innerHTML = template2({                     //Targets the template and populate it to display the address of the city searched
       myCity: myCity
     });
+   searchCity.innerHTML="";
+    var map1 = myMap(0, 0, 2);                                                   //Define variable to carry map function the starts of longitude and latitude as well as pass zoom number.
 
-    var map1 = myMap(0, 0, 2);
-
-    myCity.forEach(function(city) {
+    myCity.forEach(function(city) {                                              //Looping through data from filtering and renders markers in all the education projects/institutions found
       myMarker(city.Latitude, city.Longitude, map1);
     })
   });
