@@ -54,9 +54,9 @@ $(document).ready(function() {
     var searchCity = document.getElementById("findCity").value;
 
     if (searchCity === "") {
-      document.getElementById('message').innerHTML = "Please enter your text below";
+      document.getElementById('message').innerHTML = "please fill the textbox.";
     } else if (myCity === undefined) {
-      document.getElementById('message').innerHTML = "City is not found";
+      document.getElementById('message').innerHTML = "City is not found!";
 
     }else{
       document.getElementById('message').innerHTML = "";

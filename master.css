@@ -2,6 +2,14 @@
   input{
     height: 4em;
   }
+  .message{
+    align-self: center;
+    font-size: 28px;
+    background-color: lavender;
+    color: red;
+    
+
+  }
 .myHeading{
   font-family: 'Gloria Hallelujah', cursive;
   margin-left:2em;
@@ -12,7 +20,7 @@
     background-color: #1F618D;
   }
   .card-title{
-  font-family: 'Gloria Hallelujah', cursive;;
+  font-family: 'Gloria Hallelujah', cursive;
   }
 
   .footer {
