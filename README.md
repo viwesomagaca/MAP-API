@@ -14,14 +14,14 @@ Innogy project one, interacting two APIs
 
 
 
-* Tasks done
- -[x] Used google maps Api.
- -[x] Used the schools developmnet Api.
- -[x] Intergrated Bothe Google and schools Development Api's.
- -[ ]
- -[ ] EsLint
- -[ ] Minification
- -[x] create a github repository and deploy.
+#### Tasks done
+ - [x] Used google maps Api.
+ - [x] Used the schools developmnet Api.
+ - [x] Intergrated Bothe Google and schools Development Api's.
+ - [ ]
+ - [ ] EsLint
+ - [ ] Minification
+ - [x] create a github repository and deploy.
  
 ## Students can:
   * Type the Name of the City in the Search Box.
@@ -40,7 +40,7 @@ Innogy project one, interacting two APIs
    #### Cloning
      Go to the terminal and and copy and paste the following code;
 
-   $ git clone https://github.com/viwesomagaca/MAP-API.git
+  ``` $ git clone https://github.com/viwesomagaca/MAP-API.git ```
    
   #### Prerequisites
 
