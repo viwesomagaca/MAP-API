@@ -1,15 +1,15 @@
-$(document).ready(function() {                                                  //Populate the document and tell it to be ready
-  var cityData;                                                                 //define the variable
-  var availableSchools = document.getElementById('projects').innerHTML;         //compile handlebars templates
+$(document).ready(function() { //Populate the document and tell it to be ready
+  var cityData;  //define the variable
+  var availableSchools = document.getElementById('projects').innerHTML; //compile handlebars templates
   var template = Handlebars.compile(availableSchools);
   var foundProject = document.getElementById('output').innerHTML;
   var template2 = Handlebars.compile(foundProject);
 
-  $.ajax({                                                                       //ajax call that retrieves data from the API
+  $.ajax({  //ajax call that retrieves data from the API
     url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
     type: "GET"
   }).then(function(data) {
-    document.querySelector(".list-schools").innerHTML = template({               //Populating handlebars template
+    document.querySelector(".list-schools").innerHTML = template({  //Populating handlebars template
       school: data
     });
     cityData = data;
@@ -28,7 +28,7 @@ $(document).ready(function() {                                                  
     })
   });
 
-  function myMap(Latitude, Longitude, zoom) {   //Renders the map on the browser                                                                
+  function myMap(Latitude, Longitude, zoom) { //Renders the map on the browser                                                                
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
       zoom: zoom,
@@ -39,7 +39,7 @@ $(document).ready(function() {                                                  
   }
 
 
-  function myMarker(Latitude, Longitude, map1) {                                //function that renders markers on the map
+  function myMarker(Latitude, Longitude, map1) {  //function that renders markers on the map
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(Latitude, Longitude),
       draggable: false,
@@ -50,7 +50,7 @@ $(document).ready(function() {                                                  
   }
 
 
-  function toggleBounce() {                                                     //Function that controls the markers to bounce and toggle as well as animation
+  function toggleBounce() {  //Function that controls the markers to bounce and toggle as well as animation
     if (marker.getAnimation() !== null) {
       marker.setAnimation(null);
     } else {
@@ -58,10 +58,10 @@ $(document).ready(function() {                                                  
     }
   }
 
-  $("#search").click(function() {                                               //Event listener that listens to the search button
+  $("#search").click(function() { //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
 
-    if (searchCity === "") {                                                    //display an error message when the button is clicked while the text box is empty
+    if (searchCity === "") {   //display an error message when the button is clicked while the text box is empty
       document.getElementById('message').innerHTML = "Please enter your text below";
 
     } else if (myCity === undefined) {                                          //Displays error message when the city is not found

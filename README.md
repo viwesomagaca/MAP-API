@@ -2,46 +2,45 @@
 Innogy project one, interacting two APIs
 
 # Schools Projects Finder
-* This is a web app that any Vusi can use to search for innogy School projects locations to find a school that is best convienient
- for him to study and travel to.
- 
+* This is a web app that Vusi can use to search for innogy School projects locations to find a school that is best convenient for him to study and travel to.
+
  #### Project Schools Finder
-    ![Project Schools Finder](/images/logo.png)
+    ![Project Schools Finder](/images/schoolfinder.png)
 
 
  #### Project Schools Finder search results
-     ![Project Schools Finder](/images/logo.png)
+     ![Project Schools Finder](/images/results.png)
 
 
 
 #### Tasks done
  - [x] Used google maps Api.
- - [x] Used the schools developmnet Api.
- - [x] Intergrated Bothe Google and schools Development Api's.
+ - [x] Used the schools development Api.
+ - [x] Integrated Bothe Google and schools Development Api's.
  - [ ]
  - [ ] EsLint
  - [ ] Minification
  - [x] create a github repository and deploy.
- 
+
 ## Students can:
   * Type the Name of the City in the Search Box.
   * Click on search situated on the top right hand conner of the page.
   * Zoom in the map.
   * Zoom out on the map
   * Enable satellite view
-  * View map on full sceen.
+  * View map on full screen.
   * Enable screen view.
   * Click on the school name to Display schools details.
 
 # Getting Started
 
-* Clone or download this respository to your machine from GitHub.
+* Clone or download this repository to your machine from GitHub.
 
    #### Cloning
      Go to the terminal and and copy and paste the following code;
 
   ``` $ git clone https://github.com/viwesomagaca/MAP-API.git ```
-   
+
   #### Prerequisites
 
 * What things you need to install the software and how to install them?
@@ -59,7 +58,7 @@ Before you try to install NodeJS open a terminal window and try to run it by typ
 ##### Vusi
   * Types the name of the City he wants to find the innogy Projects in.
   * Press the search button to view schools around the city
-  * If Vusi doesnt know any Cities, He can click on the school names on the left hand side.
+  * If Vusi doesn't know any Cities, He can click on the school names on the left hand side.
   * Vusi can zoom in the map to see where the school is located
   * Vusi can then scroll down after searching so that he will be able to see more details below the Map, which are:
    * School Name
@@ -68,7 +67,7 @@ Before you try to install NodeJS open a terminal window and try to run it by typ
    * Status
 
 #### Deployment
-The app is deployed to gitHub pages. 
+The app is deployed to gitHub pages.
 
 #### Prerequisites
 The best practices in this article assume that you have:
@@ -91,5 +90,5 @@ Bootstrap - The web framework used
 "version": "1.0.0",
 
 #### Authors
-Viwe Somagaca 
+Viwe Somagaca
 Nonzulu Khala
