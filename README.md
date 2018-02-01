@@ -5,11 +5,13 @@ Innogy project one, interacting two APIs
 * This is a web app that Vusi can use to search for innogy School projects locations to find a school that is best convenient for him to study and travel to.
 
  #### Project Schools Finder
-    ![Project Schools Finder](images/schoolfinder.png)
+  
+   ![Project Schools Finder](images/schoolfinder.png)
 
 
  #### Project Schools Finder search results
-     ![Project Schools Finder](images/results.png)
+
+   ![Project Schools Finder](images/results.png)
 
 
 
@@ -17,7 +19,6 @@ Innogy project one, interacting two APIs
  - [x] Used google maps Api.
  - [x] Used the schools development Api.
  - [x] Integrated Bothe Google and schools Development Api's.
- - [ ]
  - [ ] EsLint
  - [ ] Minification
  - [x] create a github repository and deploy.
