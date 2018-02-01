@@ -82,7 +82,7 @@ You need to navigate into your Project-one Directory.
 Double Click on the index.Html page.
 
 #### Built With
-Google Maps
+Google Maps Api
 Education Projects Api
 Bootstrap - The web framework used
 
@@ -91,4 +91,4 @@ Bootstrap - The web framework used
 
 #### Authors
 Viwe Somagaca
-Nonzulu Khala
+Nonzulu Kala
