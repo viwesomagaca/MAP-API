@@ -28,7 +28,7 @@ $(document).ready(function() {                                                  
     })
   });
 
-  function myMap(Latitude, Longitude, zoom) {   //Renders the map on the browser                                                                
+  function myMap(Latitude, Longitude, zoom) {   //Renders the map on the browser
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
       zoom: zoom,

@@ -4,7 +4,7 @@ Innogy project one, interacting two APIs
 # Schools Projects Finder
 * This is a web app that any Vusi can use to search for innogy School projects locations to find a school that is best convienient
  for him to study and travel to.
- 
+
  #### Project Schools Finder
     ![Project Schools Finder](/images/logo.png)
 
@@ -17,19 +17,19 @@ Innogy project one, interacting two APIs
 #### Tasks done
  - [x] Used google maps Api.
  - [x] Used the schools developmnet Api.
- - [x] Intergrated Bothe Google and schools Development Api's.
+ - [x] Intergrated Both Google and schools Development Api's.
  - [ ]
  - [ ] EsLint
  - [ ] Minification
  - [x] create a github repository and deploy.
- 
+
 ## Students can:
   * Type the Name of the City in the Search Box.
   * Click on search situated on the top right hand conner of the page.
   * Zoom in the map.
   * Zoom out on the map
   * Enable satellite view
-  * View map on full sceen.
+  * View map on full screen.
   * Enable screen view.
   * Click on the school name to Display schools details.
 
@@ -41,7 +41,7 @@ Innogy project one, interacting two APIs
      Go to the terminal and and copy and paste the following code;
 
   ``` $ git clone https://github.com/viwesomagaca/MAP-API.git ```
-   
+
   #### Prerequisites
 
 * What things you need to install the software and how to install them?
@@ -68,7 +68,7 @@ Before you try to install NodeJS open a terminal window and try to run it by typ
    * Status
 
 #### Deployment
-The app is deployed to gitHub pages. 
+The app is deployed to gitHub pages.
 
 #### Prerequisites
 The best practices in this article assume that you have:
@@ -83,7 +83,7 @@ You need to navigate into your Project-one Directory.
 Double Click on the index.Html page.
 
 #### Built With
-Google Maps
+Google Maps Api
 Education Projects Api
 Bootstrap - The web framework used
 
@@ -91,5 +91,5 @@ Bootstrap - The web framework used
 "version": "1.0.0",
 
 #### Authors
-Viwe Somagaca 
-Nonzulu Khala
+Viwe Somagaca
+Nonzulu Kala
