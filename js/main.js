@@ -57,7 +57,6 @@ $(document).ready(function() { //Populate the document and tell it to be ready
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-
   $("#search").click(function() { //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
     var getMsg=document.getElementById('message');
