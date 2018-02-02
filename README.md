@@ -19,8 +19,8 @@ Innogy project one, interacting two APIs
  - [x] Used google maps Api.
  - [x] Used the schools development Api.
  - [x] Integrated Bothe Google and schools Development Api's.
- - [ ] EsLint
- - [ ] Minification
+ - [x] EsLinting
+ - [x] Minification
  - [x] create a github repository and deploy.
 
 ## Students can:
