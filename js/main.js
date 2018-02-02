@@ -60,9 +60,9 @@ $(document).ready(function() { //Populate the document and tell it to be ready
 
   $("#search").click(function() { //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
-
-   
-
+  if(searchCity ===""){
+    return map1
+  }
     var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
     })
