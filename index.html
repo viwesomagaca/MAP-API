@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <head>
   <link rel="stylesheet" href="css/master.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Sedgwick+Ave" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  
+
 </head>
+
 <body>
   <div class="myheader"><br> <br>
     <ul class="nav nav-pills float-right">
@@ -15,7 +17,7 @@
     </ul>
     <h1 class="myHeading">School Projects Finder</h1>
   </div>
-    <br><br>
+  <br><br>
   <div class="message" align="center">
     <p id="message"></p>
   </div>
@@ -28,8 +30,7 @@
             <script id="projects" type="text/x-handlebars-template">
               <div class="list-group">
                 {{#each school}}
-                <a id="schoolitem{{this.ID}}" class="list-group-item list-group-item-action">{{this.ProjectName}}</a>
-                {{/each}}
+                <a id="schoolitem{{this.ID}}" class="list-group-item list-group-item-action">{{this.ProjectName}}</a> {{/each}}
               </div>
             </script>
           </div>
@@ -42,26 +43,25 @@
       </div>
     </div>
   </div>
-<div class="container">
-  <div class="findMe">
-    <script id="output" type="text/x-handlebars-template">
-      <div class="row"> &nbsp;
-      {{#each myCity}}
-      <div class="col-sm-4" > &nbsp;
-        <div class="card">
-        <div class="card-block" align="center">
-    <div class="searchedSchools" align="center">
-      <h4 class="card-title"> {{this.ProjectName}}</h4>
-        <p class="card-text"> {{this.Address}}</p>
-        <p class="card-text"> {{this.CountryName}}</p>
-        <p class="card-text"> {{this.Status}}</p>
-      </div>
-    </div>
-  </div>
-  </div>
-  {{/each}}
-  </div>
-    </script>
+  <div class="container">
+    <div class="findMe">
+      <script id="output" type="text/x-handlebars-template">
+        <div class="row"> &nbsp; {{#each myCity}}
+          <div class="col-sm-4"> &nbsp;
+            <div class="card">
+              <div class="card-block" align="center">
+                <div class="searchedSchools" align="center">
+                  <h4 class="card-title"> {{this.ProjectName}}</h4>
+                  <p class="card-text"> {{this.Address}}</p>
+                  <p class="card-text"> {{this.CountryName}}</p>
+                  <p class="card-text"> {{this.Status}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </script>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -69,10 +69,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="handlebars-v4.0.5.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCruwYh9IMvrtOSKIGXMv-Llfc6IfVE_bU"></script>
-  </body>
-  <br><br>
-  <div class="footer">
-<p></p>
+</body>
+<br><br>
+<div class="footer">
+  <p></p>
 </div>
 <script src="js/main.js"></script>
+
 </html>
