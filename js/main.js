@@ -61,26 +61,20 @@ $(document).ready(function() { //Populate the document and tell it to be ready
   $("#search").click(function() { //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
 
-    if (searchCity === "") {   //display an error message when the button is clicked while the text box is empty
-      document.getElementById('message').innerHTML = "Please enter your text below";
+   
 
-    } else if (myCity === undefined) {                                          //Displays error message when the city is not found
-      document.getElementById('message').innerHTML = "City is not found";
-    }
-      document.getElementById('message').innerHTML = "";
-
-    var myCity = cityData.filter(function(item) {                               //Filters the according to cities available on the data
+    var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
     })
-    document.querySelector(".findMe").innerHTML = template2({                     //Targets the template and populate it to display the address of the city searched
+    document.querySelector(".findMe").innerHTML = template2({ //Targets the template and populate it to display the address of the city searched
       myCity: myCity
     });
 
     var map1 = myMap(myCity[0].Latitude,myCity[0].Longitude, 10);                                                   //Define variable to carry map function the starts of longitude and latitude as well as pass zoom number.
 
-    myCity.forEach(function(city) {                                              //Looping through data from filtering and renders markers in all the education projects/institutions found
+    myCity.forEach(function(city) {  //Looping through data from filtering and renders markers in all the education projects/institutions found
       myMarker(city.Latitude, city.Longitude, map1);
     })
   });
-
+  document.getElementById('findCity').innerHTML = "";  //clears the textbox
 });
