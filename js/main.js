@@ -28,7 +28,7 @@ $(document).ready(function() { //Populate the document and tell it to be ready
     })
   });
 
-  function myMap(Latitude, Longitude, zoom) { //Renders the map on the browser                                                                
+  function myMap(Latitude, Longitude, zoom) { //Renders the map on the browser
     var mapOptions1 = {
       center: new google.maps.LatLng(Latitude, Longitude),
       zoom: zoom,
@@ -60,9 +60,14 @@ $(document).ready(function() { //Populate the document and tell it to be ready
 
   $("#search").click(function() { //Event listener that listens to the search button
     var searchCity = document.getElementById("findCity").value;
+    var getMsg=document.getElementById('message');
   if(searchCity ===""){
-    return map1
+    return map1;
+  }else if(searchCity===undefined){
+    return map1;
   }
+
+  console.log("######",searchCity);
     var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
       return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
     })
