@@ -35,16 +35,20 @@ $(document).ready(function() { //Populate the document and tell it to be ready
       var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
         return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
       })
+      console.log("#####NEW TEST case#", myCity);
 
 
       if (searchCity === "") {                              //Displays an error message if the button is pressed & no text entered on the text box
         $('#message').html("Text box is empty");
-
+        setTimeout(function() {                             //Timer that makes the div disapear
+        $("#message").fadeOut(1500);
+      },2000);
 
       }
 
      else if (myCity.length===0){                         //If the city is not available it displays an error message
       $('#message').html("City is not found");
+      $("#message").fadeIn(1500);
       setTimeout(function() {                             //Timer that makes the div disapear
       $("#message").fadeOut(1500);
       },3000);
@@ -54,7 +58,9 @@ $(document).ready(function() { //Populate the document and tell it to be ready
         myCity: myCity
       });
 
-
+      document.querySelector(".list-schools").innerHTML = template({ //Populating handlebars template
+        school: myCity
+      });
       var map1 = myMap(myCity[0].Latitude, myCity[0].Longitude, 10); //Define variable to carry map function the starts of longitude and latitude as well as pass zoom number.
 
       myCity.forEach(function(city) { //Looping through data from filtering and renders markers in all the education projects/institutions found
