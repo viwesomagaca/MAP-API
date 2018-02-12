@@ -16,45 +16,43 @@ $(document).ready(function() { //Populate the document and tell it to be ready
 
     var map1 = myMap(cityData[0].Latitude, cityData[0].Longitude, 3) //Renders the map when the page loads
 
-    data.forEach(function(result) { //loop through data from API and call marker function,
+    data.forEach(function(result) { //loop through data from API and call marker function
       myMarker(result.Latitude, result.Longitude, map1); //pass the results and values from the marker function parameters in order to render them for the first time
     });
 
-    cityData.forEach(function(myCity) {
-      $('#schoolitem' + myCity.ID).click(function(schoolName) {
+    cityData.forEach(function(myCity){   //loop through the city data and do event listener so that when clicked on project name(s) markers has to be rendered according to places
+      $('#schoolitem' + myCity.ID).click(function(schoolName){
         var map1 = myMap(myCity.Latitude, myCity.Longitude, 15);
         myMarker(myCity.Latitude, myCity.Longitude, map1);
       })
     })
   });
 
-  $("#search").click(function() { //Event listener that listens to the search button
+  $("#search").click(function(){ //Event listener that listens to the search button
     var searchCity = $("#findCity").val();
 
-      console.log("######", searchCity);
-      var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
-        return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
-      })
-      console.log("#####NEW TEST case#", myCity);
+    console.log("######", searchCity);
+    var myCity = cityData.filter(function(item) { //Filters the according to cities available on the data
+      return item.City.toLowerCase().trim() === searchCity.toLowerCase().trim(); //returns the cities found and trim to remove white spaces
+    })
+    console.log("#####NEW TEST case#", myCity);
 
 
-      if (searchCity === "") {                              //Displays an error message if the button is pressed & no text entered on the text box
-        $('#message').html("Text box is empty");
-        setTimeout(function() {                             //Timer that makes the div disapear
+    if(searchCity === ""){ //Displays an error message if the button is pressed & no text entered on the text box
+      $('#message').html("Text box is empty");
+      setTimeout(function() { //Timer that makes the div disapear
         $("#message").fadeOut(1500);
-      },2000);
+      }, 2000);
 
-      }
-
-     else if (myCity.length===0){                         //If the city is not available it displays an error message
+    } else if (myCity.length === 0) { //If the city is not available it displays an error message
       $('#message').html("City is not found");
       $("#message").fadeIn(1500);
-      setTimeout(function() {                             //Timer that makes the div disapear
-      $("#message").fadeOut(1500);
-      },3000);
+      setTimeout(function() { //Timer that makes the div disapear
+        $("#message").fadeOut(1500);
+      }, 3000);
 
     } else {
-      document.querySelector(".findMe").innerHTML = template2({   //Targets the template and populate it to display the address of the city searched
+      document.querySelector(".findMe").innerHTML = template2({ //Targets the template and populate it to display the address of the city searched
         myCity: myCity
       });
 
@@ -66,13 +64,13 @@ $(document).ready(function() { //Populate the document and tell it to be ready
       myCity.forEach(function(city) { //Looping through data from filtering and renders markers in all the education projects/institutions found
         myMarker(city.Latitude, city.Longitude, map1);
       })
-    console.log("*******",myCity);
- $('#findCity').innerHTML = "";             //Clears after the text entered on the text box
-  }
+      console.log("*******", myCity);
+      $('#findCity').innerHTML = ""; //Clears after the text entered on the text box
+    }
 
 
-   //clears the textbox
- });
+    //clears the textbox
+  });
 
   function myMap(Latitude, Longitude, zoom) { //Renders the map on the browser
     var mapOptions1 = {
