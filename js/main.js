@@ -59,6 +59,19 @@ $(document).ready(function() { //Populate the document and tell it to be ready
       document.querySelector(".list-schools").innerHTML = template({ //Populating handlebars template
         school: myCity
       });
+      cityData.forEach(function(myCity){   //loop through the city data and do event listener so that when clicked on project name(s) markers has to be rendered according to places
+        $('#schoolitem' + myCity.ID).click(function(schoolName){
+          var map1 = myMap(myCity.Latitude, myCity.Longitude, 15);
+          myMarker(myCity.Latitude, myCity.Longitude, map1);
+        })
+      })
+
+
+
+
+
+
+
       var map1 = myMap(myCity[0].Latitude, myCity[0].Longitude, 10); //Define variable to carry map function the starts of longitude and latitude as well as pass zoom number.
 
       myCity.forEach(function(city) { //Looping through data from filtering and renders markers in all the education projects/institutions found
@@ -68,8 +81,6 @@ $(document).ready(function() { //Populate the document and tell it to be ready
       $('#findCity').innerHTML = ""; //Clears after the text entered on the text box
     }
 
-
-    //clears the textbox
   });
 
   function myMap(Latitude, Longitude, zoom) { //Renders the map on the browser
